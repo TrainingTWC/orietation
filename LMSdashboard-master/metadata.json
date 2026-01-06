@@ -1,0 +1,5 @@
+{
+  "name": "Employee Training Dashboard",
+  "description": "An interactive dashboard to visualize and analyze employee training data. Upload a TSV file to generate charts and AI-powered insights on course completion, departmental performance, and overall training effectiveness.",
+  "requestFramePermissions": []
+}

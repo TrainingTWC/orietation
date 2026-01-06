@@ -1,0 +1,204 @@
+/* Basic CSS Reset and Utilities */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Improve mobile touch interactions */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  /* Smooth theme transitions */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Smooth transitions for all theme-dependent elements */
+*,
+*::before,
+*::after {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Disable transitions for animations and transforms to avoid conflicts */
+* {
+  transition-property: background-color, border-color, color;
+}
+
+/* Dark mode support */
+.dark {
+  color-scheme: dark;
+}
+
+/* Mobile Touch Optimization */
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+/* Custom scrollbar hiding for mobile filters */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animation-delay-150 {
+  animation-delay: 150ms;
+}
+
+/* Chart Mobile Optimizations */
+.recharts-wrapper {
+  font-size: 12px;
+}
+
+@media (min-width: 640px) {
+  .recharts-wrapper {
+    font-size: 14px;
+  }
+}
+
+/* Recharts Legend Color Fix */
+.recharts-legend-item {
+  color: #64748b !important;
+  font-weight: 600 !important;
+}
+
+.dark .recharts-legend-item {
+  color: #cbd5e1 !important;
+}
+
+/* Responsive Chart Text Sizing */
+.recharts-text {
+  font-size: 10px;
+}
+
+@media (min-width: 640px) {
+  .recharts-text {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .recharts-text {
+    font-size: 14px;
+  }
+}
+
+/* Touch-friendly tooltip */
+.recharts-tooltip-wrapper {
+  pointer-events: auto !important;
+}
+
+/* Mobile-optimized modal */
+@media (max-width: 640px) {
+  .modal-content {
+    margin: 4px;
+    border-radius: 12px;
+  }
+}
+
+/* Prevent zoom on input focus on iOS */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+select {
+  font-size: 16px;
+}
+
+@media (min-width: 640px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  textarea,
+  select {
+    font-size: 14px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glass morphism effect utilities */
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(71, 85, 105, 0.3);
+}
