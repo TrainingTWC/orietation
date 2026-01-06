@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     const isProduction = mode === 'production';
     return {
-      base: isProduction ? '/LMSdashboard/' : '/',
+      base: isProduction ? '/orietation/' : '/',
       server: {
         port: 3010,
         host: '0.0.0.0',
